@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3D Penambahan Kamera</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Tambahkan marker untuk AR -->
+        <a-marker preset="hiro">
+
+            <!-- Kubus -->
+            <a-plane position="0 4 -7" rotation="-90 0 0">
+            <a-box color="#A52A2A" depth="2" height="2" width="2"></a-box>
+            </a-plane>
+
+            <!-- Silinder -->
+            <a-plane position="3 0 -3" rotation="0 30 0">
+            <a-cylinder color="#E9967A" height="3" radius="1.5"></a-cylinder>
+            </a-plane>
+
+            <!-- Donat -->
+            <a-plane position="-2 3 -7" rotation="0 45 0">
+            <a-torus color="#008000" radius="2" radius-tubular="0.4"></a-torus>
+            </a-plane>
+
+            <!-- Dodecahedron -->
+            <a-plane position="-4 0 -4" rotation="0 30 0">
+            <a-dodecahedron color="#FF69B4" radius="1.5"></a-dodecahedron>
+            </a-plane>
+
+            <!-- Tetrahedron -->
+            <a-plane position="2 3 -3">
+            <a-tetrahedron color="#4B0082" radius="1.5"></a-tetrahedron>
+            </a-plane>
+
+            <!-- Pencahayaan -->
+            <a-light type="ambient" color="#888"></a-light>
+            <a-light type="point" intensity="2" position="2 4 4"></a-light>
+        
+        </a-marker>
+
+        <!-- Kamera untuk tampilan AR -->
+        <a-entity camera></a-entity>
+
+    </a-scene>
+</body>
+</html>
